@@ -1,0 +1,62 @@
+PA_Lib安装
+
+
+***** pip install PA_Lib
+
+***** tensorboard 1.8.0 has requirement bleach==1.5.0, but you'll have bleach 2.1.3 which is incompatible.
+tensorboard 1.8.0 has requirement html5lib==0.9999999, but you'll have html5lib 1.0.1 which is incompatible.
+
+*** 指定版本安装
+pip install  bleach==1.5.0
+
+***** error: Microsoft Visual C++ 14.0 is required
+“控制面板”>“程序功能”，卸载2个“Microsoft Visual C++ 2017”。
+下载“Microsoft Visual C++ 2015 Redistributable”，安装“vc_redist.x64.exe”，“vc_redist.x86.exe”2个。
+
+***** Failed building wheel for TA-Lib
+python3中Failed building wheel for xxx”的解决办法
+
+Python其它包的过程中出现“ Failed building wheel for xxx”的解决办法： 
+出现原因：缺失相应的whl文件。 
+解决办法：下载并安装对应的whl文件。
+
+
+1.如何下载对应的whl文件： 
+
+
+点击下方链接，即可找到并下载相对应的whl文件： 
+
+
+Unofficial Windows Binaries for Python Extension Packages 
+
+
+例如，出现“ Failed building wheel for python_Levenshtein”则下载相应python版本的python_Levenshtein文件。 
+
+
+我用的是Python3.5版本，则找到python_levenshtein-0.12.0-cp35-cp35m-win_amd64.whl文件进行下载即可。
+
+
+2、.如何安装对应的whl文件：
+
+
+使用pip install “文件路径+whl文件名”即可成功安装对应的whl文件。
+比如：pip install D:\ruanjian\python\python_Levenshtein-0.12.0-cp35-cp35m-win_amd64.whl
+
+*** TA-Lib-0.4.17.tar.gz，安装时出错，
+https://www.lfd.uci.edu/~gohlke/pythonlibs/#ta-lib
+
+**Server Error
+
+404 - File or directory not found.
+The resource you are looking for might have been removed, had its name changed, or is temporarily unavailable.
+
+这个网站，可以打开。
+https://download.lfd.uci.edu/pythonlibs/c3ylw7lc/TA_Lib-0.4.17-cp36-cp36m-win_amd64.whl
+但是，这个就打不开了，开始真以为是文件已删除，后来试试用vpn，结果下载成功。
+
+pip install TA_Lib-0.4.17-cp36-cp36m-win_amd64.whl
+安装成功
+
+
+
+

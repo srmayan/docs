@@ -1,0 +1,110 @@
+***** 使用Anaconda安装
+
+1）下载安装Anaconda，安装时2个选项都要打勾。后面，不要安装“vscode”。
+
+
+***** 添加软件仓库镜像
+
+用管理员身份，打开命令行窗口。
+
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+
+conda config --set show_channel_urls yes
+
+最好不要用镜像，怕某些镜像软件升级会滞后很长时间。
+
+删除镜像，是这样：
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+
+
+***** 为了避免报错，推荐在相关环境下更新所有的包。打开 Anaconda Prompt （或者 Mac 下的终端），键入：
+
+conda upgrade --all
+
+
+***** 打开命令行窗口，创建conda环境
+
+conda create -n tensorflow python=3.6
+
+3）激活conda环境
+
+activate tensorflow
+
+
+***** 为了避免报错，推荐在相关环境下更新所有的包。打开 Anaconda Prompt （或者 Mac 下的终端），键入：
+
+conda upgrade --all
+
+注意：在“base”和“TensorFlow”两个环境，都需要分别升级。第一次完整的安装升级完成测试备份后，就不要再随意升级软件了，需要安全稳定的工作一段时间。
+
+
+***** 安装CPU版本(或GPU版)的TensorFlow。
+
+pip install --ignore-installed --upgrade tensorflow(-gpu)
+
+
+***** 验证安装
+
+验证TensorFlow安装是否成功，可以在命令行窗口输入python进入python环境，或者运行python3.5命令行后输入以下代码：
+
+>>> import tensorflow as tf
+>>> hello = tf.constant('Hello, TensorFlow!')
+>>> sess = tf.Session()
+>>> print(sess.run(hello))
+
+如果能正常输出hello字符串，则安装成功。
+
+Hello, TensorFlow!
+
+***** 安装“keras”
+pip install keras -U --pre
+
+Keras中mnist数据集测试 下载Keras开发包。之后可以验证keras是否安装成功,
+>>> conda install git
+>>> git clone https://github.com/fchollet/keras.git
+>>> cd keras/examples/
+>>> python mnist_mlp.py
+程序无错进行，至此，keras安装完成。(实际上，因为网络连接有问题，这个测试是不能顺利进行的，但不表示程序出错。注意这点。)
+
+
+***** 在tensorflow环境中安装插件
+
+运行 开始菜单->Anaconda3—>Anaconda Navigator，点击左侧的Environments，可以看到tensorflow的环境已经创建好了。
+
+为了能在ipython 和Spyder中使用tensorflow，我们需要在tensorflow的环境中安装这两个的插件。打开Anaconda Navigator，选择“Environment”>“TensorFlow”>“Not installed”，找到ipython和Spyder并安装。之后，在windows程序中就可以找到tensorflow环境下的spyder和IPython了，君可自在遨游了。
+
+
+***** Spyder，汉化，https://github.com/kingmo888/Spyder_Simplified_Chinese
+尽量使用一个用熟一个“Spyder”(以“Spyder”为主，“Jupyder”为辅)。
+
+
+//////////////////////////////////////////
+
+***** win10上修改Jupyter Notebook初始目录
+
+Jupyter Notebook打开后一般都是用户目录，可以通过Jupyter Notebook快捷方式属性中的目标来修改一开始打开的文件夹路径。 
+这里写图片描述
+
+将需要的路径放在C:\ProgramData\Anaconda3\Scripts\jupyter-notebook-script.py和百分号之间，并且前后都有一个空格。 
+这样用Jupyter Notebook快捷方式打开后进入的默认目录就是你设置的目录了。
+
+C:\ProgramData\Anaconda3\python.exe C:\ProgramData\Anaconda3\cwp.py C:\ProgramData\Anaconda3\envs\tensorflow C:\ProgramData\Anaconda3\envs\tensorflow\python.exe C:\ProgramData\Anaconda3\envs\tensorflow\Scripts\jupyter-notebook-script.py D:\Documents %USERPROFILE%
+
+
+***** 视情况，可以“为Jupyter Notebook添加文章目录”。(能不用就不用，东西越少越好。)
+1.  安装 jupyter_contrib_nbextensions
+pip install jupyter_contrib_nbextensions
+
+2. 配置 nbextension
+jupyter contrib nbextension install --user
+
+3. 启动jupyter notebook
+选择 Nbextensions
+勾选 Table of Contents 等
+
+
+***** 不要使用vscode，设置可能太麻烦，我没有设置成功，没有找到好的相关资料。所以，就不考虑使用。
+
+
+
+
