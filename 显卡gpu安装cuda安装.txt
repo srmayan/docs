@@ -41,8 +41,3 @@ C:\ProgramData\NVIDIA Corporation\CUDA Samples\v9.0
 
 ***** GPU显卡的cuda安装，到此就大功告成了。往下，可以开始TensorFlow的安装。
 
-
-
-
-
-
